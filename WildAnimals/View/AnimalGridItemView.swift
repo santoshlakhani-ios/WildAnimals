@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AnilGridItemView: View {
+struct AnimalGridItemView: View {
     //MARK: - Properties
     let animal: AnimalDM
     
@@ -20,6 +20,6 @@ struct AnilGridItemView: View {
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    AnilGridItemView(animal: lionAnimal)
+    AnimalGridItemView(animal: lionAnimal)
         .padding()
 }

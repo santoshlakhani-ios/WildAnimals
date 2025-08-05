@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct InsetFactView: View {
+    //MARK: - Properties
+    let animal: AnimalDM
+    
+    //MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GroupBox {
+            TabView {
+                ForEach(animal.fact, id: \.self) { item in
+                    Text(item)
+                }
+            } //: Tab View
+            .tabViewStyle(PageTabViewStyle())
+            .frame(minHeight: 148, idealHeight: 168, maxHeight: 180)
+        } //: Group Box
     }
 }
 
-#Preview {
-    InsetFactView()
+#Preview(traits: .sizeThatFitsLayout) {
+    InsetFactView(animal: lionAnimal)
+        .padding()
 }
